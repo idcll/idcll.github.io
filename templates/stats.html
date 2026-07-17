@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page">
+
+    <h1>📊 Estadísticas NASCAR</h1>
+
+    <canvas id="myChart"></canvas>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            'Hamlin',
+            'Reddick',
+            'Blaney',
+            'Gibbs',
+            'Elliott'
+        ],
+        datasets: [{
+            label: 'Puntos',
+            data: [
+                791,
+                767,
+                726,
+                665,
+                610
+            ]
+        }]
+    }
+});
+
+</script>
+
+{% endblock %}
